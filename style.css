@@ -1,0 +1,362 @@
+/*RESET**********************************************************************/
+html {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+/****************************************************************************/
+/*HEADER*********************************************************************/
+/***********test combo**********************/
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+}
+
+.wrapper .search-input{
+  position: relative;
+  display: flex;
+align-items: center;
+justify-content: space-between;
+  width: 180px;
+  height: 60px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  margin: 0 20px 0 0;
+  color: blue;
+}
+.selectInput::placeholder {
+  color: white;
+}
+input:focus::placeholder {
+  color: transparent;
+}
+.search-input input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+}
+
+.search-input.active input{
+  border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+  
+}
+
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  color: black;
+  border-radius: 3px;
+}
+
+.search-input.active .autocom-box li{
+  display: block;
+}
+.autocom-box li:hover{
+  background: #efefef;
+}
+
+.search-input .icon{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #fff;
+  
+}
+.fa-angle-down.rotated {
+  transform : rotate(180deg);
+}
+/**************************************************************************/
+.container {
+  display: flex;
+  width: 80%;
+}
+
+.containerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+
+.header {
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 70%;
+  height: auto; 
+}
+
+/***************************************************************************/
+/*SEARCH********************************************************************/
+
+.containerSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+}
+.input {
+  background-color: #f5ecec;
+  padding: 0 30px;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 55px;
+  border: none;
+}
+
+.fas {
+  position: absolute;
+  display: flex;
+  right: 30px;
+  top: 35px;
+  margin-right: 20px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.sort {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #fff;
+
+}
+.tags {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 40px;
+  /*display: none;*/
+}
+
+.tags li {
+  margin-left: -40px;
+  margin-right: 60px;
+  padding:0 10px;
+}
+
+.tag {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  height: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 3px;
+  background-color: rgb(189, 189, 178);
+}
+.tag li {
+  margin-left: 20px;
+}
+
+.fa-times-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 6px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+.btn-group {
+  display: flex;
+ 
+}
+.searchBy {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+}
+
+.inputBy {
+  position: relative;
+  display: flex;
+align-items: center;
+justify-content: space-between;
+  width: 180px;
+  height: 60px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  margin: 0 20px 0 0;
+  color: #fff;
+}
+.btn:focus {
+  box-shadow: none!important;
+}
+
+.fa-angle-down {
+  position: absolute;
+  font-size: 1.7rem;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 60px;
+}
+/****************************************************************************/
+/*CARDS**********************************************************************/
+
+.col-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  width: 00%1;
+  height: 350px;
+  margin-bottom: 50px; 
+}
+
+.containerCards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+}
+
+.photosPlats {
+  width: 100%;
+  min-height: 45%;
+  border-radius: 7px 7px 0 0;
+  background-color: #c7bebe;
+}
+
+.titleTime {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  height: 40px;
+  background-color: rgb(245, 236, 236);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  width: 70%;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.time {
+  display: flex;
+  align-items: center; 
+  font-size: 0.9rem;
+  width: 24%;
+  height: 100%;
+}
+
+.fa-clock {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+}
+
+.mn {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  height: 10px;
+}
+
+.recette {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 43.5%;
+  border-radius: 0 0 7px7px;
+  font-size: 0.73rem;
+  background-color: rgb(245, 236, 236);
+}
+
+.ingredients {
+  width: 40%;
+}
+
+.list-ingredients {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 90%;
+  height: 95%;
+  padding: 10px;
+  padding: 0 0 0 10px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.ingredients-details {
+  font-weight: 900;
+}
+.préparation {
+  position: relative;
+  width: 60%;
+  height: 95%;
+  padding-right: 20px;
+ /* word-break: break-all;*/
+  overflow: hidden;
+ /* white-space: nowrap;*/
+  /*text-overflow: ellipsis; */
+}
