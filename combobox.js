@@ -53,8 +53,8 @@ function createItem(parent, listing) {
   let listItem = document.createElement("li");
   listItem.classList.add("list-items");
   listItem.style.cursor = "pointer";
-  listItem.setAttribute("onclick", "displayTags('" + listing + "')");
-
+ // listItem.setAttribute("onclick", "displayTags('" + listing + "')");
+listItem.addEventListener("click", displayTags.bind(null, listing));
   let word = listing;
   //afficher la valeur dans le tableau
   listItem.innerText = word;
@@ -62,6 +62,7 @@ function createItem(parent, listing) {
 }
 
 //regarder/compréhension
+//event.target
 //possibilité 1) //listItem.addEventListener( "click", displayTags.bind( null, i ) );
 //possibilité 2) //() => displayTags( i )
 
@@ -75,17 +76,19 @@ for (let combo of combos) {
   combo.input.addEventListener("keyup", (e) => {
     //
     for (let listing of combo.list) {
+    
       if (
         listing.toLowerCase().includes(combo.input.value.toLowerCase()) &&
         combo.input.value != ""
+       
       ) {
         const parent = combo.input.closest("form");
         createItem(parent, listing);
       }
-    }
+   }
   });
 }
-
+ 
 //Exécution la fonction sur keyup
 // input.addEventListener("keyup", (e) => {
 //   removeElements();
