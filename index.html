@@ -7,12 +7,6 @@
     <title>Accueil petits plats gourmands</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
@@ -23,10 +17,10 @@
 
   <header>
 
-    <div class="container col-12 containerHeader">
+    <div class="containerHeader">
       <div class="row">
         <div class="header">
-          <img src="./logo_lespetitsplats.png" class="logo" />
+          <img src="./img/logo_lespetitsplats.png" class="logo" />
         </div>
       </div>
     </div>
@@ -35,11 +29,9 @@
 
   <body>
  
-<!--PAGE-->
-    <div class="container col-12">
+
       
 <!--SEARCH--> 
-
 <div class="containerSearch">     
         
           <div class="searchRecipes">
@@ -52,138 +44,70 @@
               id="search"
               placeholder="Rechercher une recette ..."
               minlength="2"
-              maxlength="20"
-            />
-            
+              maxlength="30"
+            /> 
           </div>
 
-          <div class="sort">
-            <ul class="tags">
-              <li class="tag"><i class="far fa-times-circle"></i></li>
-             
-            </ul>
+
+          <!-- Tags -->
+         </div> 
+          <div class="tagsWrapper">
+       <div class="tagsContainer">
+            <ul class="tags"></ul>
+          </div>
          </div>
 
-            <!--<div class="searchBy">
-            
-              <button
-                class="inputBy btn btn-primary" type="submit">Ingrédients<i class="fas fa-angle-down"></i></button>
-              <button
-                class="inputBy btn btn-success" type="submit">Appareils<i class="fas fa-angle-down"></i></button>
-              <button
-                class="inputBy btn btn-danger" type="submit">Ustensiles<i class="fas fa-angle-down"></i></button>           
-          
-        </div>-->
-
-        <!--début-->
-         <div class="wrapper">
            
-      <div class="search-input">
-        <a href="" target="_blank" hidden></a>
-        <input type="text" class="selectInput" id="ingredients"  placeholder="Ingredients" style="background-color:rgb(107, 107, 231)">
-        
-        <div class="autocom-box ">
-          <!-- here list are inserted from javascript -->
-        </div>
-        <div class="icon"><i class="fas fa-angle-down"></i></div>
-      </div> 
-    
+
+        <!--ComboBox autocomplète-->
+          <div class="wrapperCombo">
+            <div class="containerCombo">
+              
+         <form autocomplete="off">
+      <div class="box">
+        <input type="text" id="input1" class="inputCombo1" placeholder="Ingredients ..." maxlength="17" />
+        <img src="img/angle-down-solid.svg" class="arrow-down">
+      </div>
+      <ul class="list"></ul>
+    </form>
+          
+
+    <form autocomplete="off">
+      <div class="box">
+        <input type="text" id="input2" class="inputCombo2" placeholder="Appareils ..." maxlength="17" />
+        <img src="img/angle-down-solid.svg" class="arrow-down">
+      </div>
+      <ul class="list"></ul>
+    </form>
+           
+
+            <form autocomplete="off">
+      <div class="box">
+        <input type="text" id="input3" class="inputCombo3" placeholder="Ustensiles ..." maxlength="17" />
+        <img src="img/angle-down-solid.svg" class="arrow-down">
+      </div>
+      <ul class="list"></ul>
+    </form>
+           </div> 
+          </div>
+     </div>
       
-      <div class="search-input">
-        <a href="" target="_blank" hidden></a>
-        <input type="text" class="selectInput" id="appareils" placeholder="Appareils" style="background-color:rgb(59, 207, 59)">
-        <div class="autocom-box">
-          <!-- here list are inserted from javascript -->
-        </div>
-        <div class="icon"><i class="fas fa-angle-down"></i></div>
-      </div> 
-    
-       
-      <div class="search-input">
-        <a href="" target="_blank" hidden></a>
-        <input type="text" class="selectInput" id="ustensils" placeholder="Ustensils" style="background-color:rgb(228, 157, 27)">
-        <div class="autocom-box">
-          <!-- here list are inserted from javascript -->
-        </div>
-        <div class="icon"><i class="fas fa-angle-down"></i></div>
-      </div>
-
-      </div> 
-    <!--fin-->
-
-    
-      </div>
-      </div>
+     
     
   <!--CARD-->
-      <div class="container col-lg-12 cards">
-        <div class="containerCards">
-          <div class="row rowCard">
-<ul class="list-ingredients"></ul>
- <!--<div class="col-4 mb-4">
-            <div class="card">
-              <div class="photosPlats"></div>
+      <div class="wrapperCards">
+        <div class="containerCards"></div>  
+         </div>
              
-              <div class="titleTime">
-                <h3 class="title">Lait coco sablé</h3>
-                <div class="time">
-                  <i class="far fa-clock"></i>
-                  <span class="mn">15 mn</span>
-                </div>
-              </div>
-
-              <div class="recette">
-                <div class="ingrédients">
-                  <ul>
-<li >pommes</li>
-<li >haricots</li>
-<li >poivre</li>
-<li >boeuf</li>
-                  </ul>
-                </div>
-
-                <div class="préparation">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Labore minus incidunt culpa ducimus nemo quibusdam velit
-                    obcaecati nostrum placeat! Doloremque illo voluptate
-                    adipisci libero, neque laudantium quos. Fuga, eaque
-                    perspiciatis.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>-->
-        
-          </div>
-
-            
-
-
-          </div>        
-        </div>
-      </div>   
-
   </body>
 
-  <script
-    src="https://code.jquery.com/jquery-2.2.4.min.js"
-    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-    crossorigin="anonymous"
-  ></script>
+ 
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
-    integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
-    crossorigin="anonymous"
-  ></script>
+ 
 
-  <script src="./recipes.js"></script>
-
-  <script src="./index.js"></script>
+  <script src="./recipes.js"></script><script src="./search.js"></script>
   
-  <script src="./cards.js"></script>
+  <script src="./cards.js"></script> 
+  <script src="./comboBox.js"></script>
   
-  <script src="./search.js"></script>
-  <script src="./combobox.js"></script>
 </html>

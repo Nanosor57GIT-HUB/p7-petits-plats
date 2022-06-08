@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="test">
+    <div class="container">
+      <input
+        type="text"
+        id="country-input"
+        class="autocomplete-input"
+        placeholder="Ingredients"
+      />
+      <div class="icon"><i class="fas fa-angle-down"></i></div>
+      <ul class="autocomplete-list" id="country-list"></ul>
+    </div>
+
+     <div class="container">
+      <input
+        type="text"
+        id="country-input"
+        class="autocomplete-input2"
+        placeholder="Appareils"
+      />
+      <ul class="autocomplete-list" id="country-list"></ul>
+    </div>
+
+    <div class="container">
+      <input
+        type="text"
+        id="country-input"
+        class="autocomplete-input3"
+        placeholder="Ustensiles"
+      />
+      <ul class="autocomplete-list" id="country"></ul>
+    </div>
+</div>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        background-color: #121212;
+      }
+      .container {
+        /*position: relative;*/
+        margin-left: 20px;
+        margin-top: 20px;
+        max-width: 400px;
+        
+      }
+
+      .autocomplete-input {
+        width: 200px;
+        padding: 25px 15px;
+        width: calc(100 -50px);
+        border-radius: 2px;
+        border: none;
+        outline: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: white;
+        background-color: blue;
+      }
+
+      .autocomplete-input2 {
+        width: 200px;
+        padding: 25px 15px;
+        width: calc(100 -50px);
+        border-radius: 2px;
+        border: none;
+        outline: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: white;
+        background-color: rgb(255, 0, 0);
+      }
+
+       .autocomplete-input3 {
+        width: 200px;
+        padding: 25px 15px;
+        width: calc(100 -50px);
+        border-radius: 2px;
+        border: none;
+        outline: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: white;
+        background-color: rgb(134, 78, 78);
+      }
+      .test {
+        display: flex;
+      }
+      .autocomplete-input::placeholder {
+        color: #f7f5f5aa;
+      }
+
+      .autocomplete-list {
+        position: absolute;
+        top: 92px;
+        left: 0;
+        list-style-type: none;
+       margin-left: 20px;
+       margin-top: 0;
+        padding: 0;
+        max-width: 730px;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 1.2rem;
+        border-radius: 0 5px 5px 5px;
+        background-color: blue;
+        cursor: pointer;
+      }
+
+      .autocomplete-list li {
+        color: white;
+        padding: 15px;
+        /*margin: 10px 20px 10px 10px;*/
+      }
+    </style>
+ <script src="./recipes.js"></script>
+    <script>
+      let ingredients = [];
+      
+      const countryListElement = document.querySelector("#country-list");
+      const countryInputElement = document.querySelector("#country-input");
+
+      function getIngredients() {
+      
+
+            ingredients = recipes.map((x) => x.ingredients.map((i) => i.ingredient).join(' '))
+            console.log(ingredients);
+   
+                  loadData(ingredients, countryListElement); 
+      }
+
+       getIngredients();
+
+      function loadData(ingredients, element) {
+        if (ingredients) {
+          element.innerHTML = "";
+          let innerElement = "";
+          ingredients.forEach((ingredient) => {
+            innerElement += `
+            <li>${ingredient}</li>`;
+          });
+
+          element.innerHTML = innerElement;
+        }
+      }
+
+      function filterData(ingredients, searchText) {
+        return ingredients.filter((x) =>
+          x.toLowerCase().includes(searchText.toLowerCase())
+        );
+      }
+
+     
+
+      countryInputElement.addEventListener("input", function () {
+        const filteredData = filterData(ingredients, countryInputElement.value);
+        loadData(filteredData, countryListElement);
+      });
+    </script>
+   
+  </body>
+</html>
